@@ -11,62 +11,113 @@
     android:padding="16dp">
 
     <LinearLayout
-        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
         android:padding="16dp"
-        android:visibility="visible">
+        android:visibility="visible"
+        android:isScrollContainer="true">
 
-        <ImageView
-            android:id="@+id/image_iv"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="@string/sandwich_picture_content_description" />
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/also_known_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_also_known_as_label"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/also_known_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/ingredients_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_ingredients_label"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/ingredients_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/image_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/sandwich_picture_content_description" />
 
-        <TextView
-            android:id = "@+id/origin_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_place_of_origin_label"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/origin_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/also_known_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="12sp"
+                    android:text="@string/detail_also_known_as_label"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:text="Also Known As" />
 
-        <TextView
-            android:id="@+id/description_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_description_label"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/description_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/also_known_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:paddingBottom="20dp"
+                    android:textAllCaps="false"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/ingredients_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="30sp"
+                    android:text="@string/detail_ingredients_label"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:text="ingredients" />
+
+                <TextView
+                    android:id="@+id/ingredients_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp" />
+
+                <TextView
+                    android:id="@+id/origin_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="14sp"
+                    android:text="@string/detail_place_of_origin_label"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:text="places of origin" />
+
+                <TextView
+                    android:id="@+id/origin_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp" />
+
+                <TextView
+                    android:id="@+id/description_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="18sp"
+                    android:text="@string/detail_description_label"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:text="description" />
+
+                <TextView
+                    android:id="@+id/description_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
     </LinearLayout>
 
 </LinearLayout>
