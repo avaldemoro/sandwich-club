@@ -1,12 +1,11 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+
 import android.os.*;
-import android.graphics.*;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.*;
-import android.util.*;
+import android.view.*;
 import java.util.*;
 
 import com.squareup.picasso.*;
@@ -18,7 +17,8 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    private TextView descriptionTV, placeOfOriginTV, alsoKnownAsTV, ingredientTV;
+    private TextView descriptionTV, placeOfOriginTV, alsoKnownAsTV, ingredientTV,
+    originLabel, alsoKnownLabel;
     private ImageView imageIv;
 
     @Override
@@ -28,9 +28,12 @@ public class DetailActivity extends AppCompatActivity {
 
         descriptionTV = findViewById(R.id.description_tv);
         placeOfOriginTV = findViewById(R.id.origin_tv);
+        originLabel = findViewById(R.id.origin_label);
         alsoKnownAsTV = findViewById(R.id.also_known_tv);
+        alsoKnownLabel = findViewById(R.id.also_known_label);
         ingredientTV = findViewById(R.id.ingredients_tv);
         imageIv = findViewById(R.id.image_iv);
+
 
 
         Intent intent = getIntent();
@@ -70,13 +73,21 @@ public class DetailActivity extends AppCompatActivity {
                 .into(imageIv);
 
         descriptionTV.setText(sandwich.getDescription());
-        placeOfOriginTV.setText(sandwich.getPlaceOfOrigin());
+
+        // If no place of origin, do not display view
+        if (sandwich.getPlaceOfOrigin().isEmpty()) {
+            originLabel.setVisibility(View.GONE);
+            placeOfOriginTV.setVisibility(View.GONE);
+        } else {
+            placeOfOriginTV.setText(sandwich.getPlaceOfOrigin());
+        }
+
         // Get Also Known As list
         List<String> akaList = sandwich.getAlsoKnownAs();
-        // If no list, set text to "no other names"
-        //TODO: get rid of view completely if list is blank
+        // If there's no AKA list, do not display view
         if (akaList.size() == 0) {
-            alsoKnownAsTV.setText("No other names");
+            alsoKnownLabel.setVisibility(View.GONE);
+            alsoKnownAsTV.setVisibility(View.GONE);
         } else {
             StringBuilder akaNames = new StringBuilder();
 
@@ -86,6 +97,7 @@ public class DetailActivity extends AppCompatActivity {
             akaNames.setLength(akaNames.length() - 2);
             alsoKnownAsTV.setText(akaNames);
         }
+
         List<String> ingredientsList = sandwich.getIngredients();
         StringBuilder ingredients = new StringBuilder();
 

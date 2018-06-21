@@ -25,7 +25,7 @@
             android:contentDescription="@string/sandwich_picture_content_description" />
 
         <TextView
-            android:id="@+id/also_known_caption_tv"
+            android:id="@+id/also_known_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_also_known_as_label"
@@ -33,11 +33,10 @@
         <TextView
             android:id="@+id/also_known_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/also_known_caption_tv"/>
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/ingredients_caption_tv"
+            android:id="@+id/ingredients_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_ingredients_label"
@@ -48,6 +47,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:id = "@+id/origin_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_place_of_origin_label"
@@ -58,6 +58,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/description_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_description_label"
