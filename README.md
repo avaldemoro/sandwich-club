@@ -1,7 +1,7 @@
 # Sandwich Club Project
-This project is part of the Android Developer Nanodegree program. In this project, the code for the **Sandwich Club** app must be completed to show the details of each sandwich once it is selected. The starter code for this project can be found [here](https://github.com/udacity/sandwich-club-starter-code)
+This project is part of the Android Developer Nanodegree program. In this project, the code for the **Sandwich Club** app must be completed to show the details of each sandwich once it is selected. The starter code for this project can be found [here](https://github.com/udacity/sandwich-club-starter-code).
 
-| Home  | Details |
+| Home Screen | Details Screen |
 | ------------- | ------------- |
 | ![Screenshot](/screenshots/sandwichclubhome-ss.png)  | ![Screenshot](/screenshots/sandwichclubdetail-ss.png)  |
 
